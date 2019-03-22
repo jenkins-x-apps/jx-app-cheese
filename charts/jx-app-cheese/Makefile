@@ -2,7 +2,6 @@ CHART_REPO := http://jenkins-x-chartmuseum:8080
 CURRENT=$(pwd)
 NAME := jx-app-cheese
 OS := $(shell uname)
-VERSION := $(shell cat ../../VERSION)
 
 init:
 	helm init --client-only
@@ -48,4 +47,3 @@ endif
 	git add --all
 	git commit -m "release $(VERSION)" --allow-empty # if first release then no verion update is performed
 	git tag -fa v$(VERSION) -m "Release version $(VERSION)"
-	git push origin v$(VERSION)

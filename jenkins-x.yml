@@ -1,0 +1,19 @@
+buildPack: apps
+pipelineConfig:
+  pipelines:
+    release:
+      agent:
+        image: centos:7
+      environment:
+        - name: GIT_COMMITTER_EMAIL
+          value: jenkins-x@googlegroups.com
+        - name: GIT_COMMITTER_NAME
+          value: jenkins-x-bot
+        - name: GIT_AUTHOR_EMAIL
+          value: jenkins-x@googlegroups.com
+        - name: GIT_AUTHOR_NAME
+          value: jenkins-x-bot
+      build:
+        preSteps:
+          - sh: mkdir goreleaser
+          - sh: curl -Lf https://github.com/goreleaser/goreleaser/releases/download/v0.93.2/goreleaser_Linux_x86_64.tar.gz | tar -xzv -C ./goreleaser/
