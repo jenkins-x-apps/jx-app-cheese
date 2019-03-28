@@ -1,0 +1,71 @@
+{
+  "$id": "https://example.com/address.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "values.yaml for jx-app-cheese",
+  "type": "object",
+  "properties": {
+    "goarch": {
+      "type": "array",
+      "title": "Supported Architectures",
+      "description": "Specify the architecture you want to allow this plugin to be installed for",
+      "default": [
+        "i386",
+        "amd64",
+        "x86_64"
+      ],
+      "items": {
+        "type": "string",
+        "enum": [
+          "386",
+          "amd64",
+          "amd64p32",
+          "arm",
+          "armbe",
+          "arm64",
+          "arm64be",
+          "ppc64",
+          "ppc64le",
+          "mips",
+          "mipsle",
+          "mips64",
+          "mips64le",
+          "mips64p32",
+          "mips64p32le",
+          "ppc",
+          "s390",
+          "s390x",
+          "sparc",
+          "sparc64",
+          "i386",
+          "x86_64"
+        ]
+      }
+    },
+    "goos": {
+      "type": "array",
+      "title": "Supported Operating Systems",
+      "default": [
+        "windows",
+        "linux",
+        "darwin"
+      ],
+      "items": {
+        "type": "string",
+        "enum": [
+          "android",
+          "darwin",
+          "dragonfly",
+          "freebsd",
+          "linux",
+          "nacl",
+          "netbsd",
+          "openbsd",
+          "plan9",
+          "solaris",
+          "windows",
+          "zos"
+        ]
+      }
+    }
+  }
+}

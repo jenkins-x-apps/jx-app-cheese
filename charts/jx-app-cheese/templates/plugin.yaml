@@ -9,8 +9,8 @@ spec:
   subCommand: {{ .Values.plugin.subCommand }}
   group: {{ .Values.plugin.group }}
   binaries:
-  {{- range $goos := .Values.plugin.goos }}
-  {{- range $goarch := $.Values.plugin.goarch }}
+  {{- range $goos := .Values.goos }}
+  {{- range $goarch := $.Values.goarch }}
   {{- $ext := "tar.gz" }}
   {{- if eq $goos "Windows" }}
   {{- $ext := "zip" }}
