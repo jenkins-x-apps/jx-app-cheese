@@ -7,7 +7,7 @@ build:
 	go build -o bin/${PLUGIN_NAME} brie.go
 
 release:
-	goreleaser
+	/workspace/source/goreleaser/goreleaser
 
 clean:
 	rm -rf bin
